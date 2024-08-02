@@ -1,3 +1,3 @@
 # oop-fundamentals
 
-## basics of c
+## This repo will  be used to  build a console app
