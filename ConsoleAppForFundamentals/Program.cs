@@ -2,18 +2,18 @@
 // number : integer &  floating point  fixed point
 
 // integer - smallest data type - byte - 8 bits - 255 for age
-byte? age = 32; // adding  ?  after datatype makes the variable nullable
-byte? ageOfChild = null;
-short numberOfPeopleInCompany = 32221; //camel casing 
+// byte? age = 32; // adding  ?  after datatype makes the variable nullable
+// byte? ageOfChild = null;
+// short numberOfPeopleInCompany = 32221; //camel casing 
 //pascal casing used for  class/methods
 
-int areaOfCountry = 29213910; // 32 bits
-long distanceBetweenTwoGalaxies = 2173712321899021931;// 64 bits
+// int areaOfCountry = 29213910; // 32 bits
+// long distanceBetweenTwoGalaxies = 2173712321899021931;// 64 bits
 
 // doesn't care about range  , but with precision (accuracy); float is less precise, double is more precise, decimal is most precise
-float averageWeight = 72.1f;//32bit
-double averageDistanceOfCheckpoints = 23423.23232232323; //
-decimal averageDistanceBetweenElectrons = 23243.2322323223232321m;
+// float averageWeight = 72.1f;//32bit
+// double averageDistanceOfCheckpoints = 23423.23232232323; //
+// decimal averageDistanceBetweenElectrons = 23243.2322323223232321m;
 
 
 //precision check 
@@ -24,14 +24,14 @@ decimal averageDistanceBetweenElectrons = 23243.2322323223232321m;
 //by default float lai  double bhanera bujhcha
 
 
-string name = "Rozen Shrestha";
-char gender = 'M'; // "" for string  '' for character
+// string name = "Rozen Shrestha";
+// char gender = 'M'; // "" for string  '' for character
 
 //Boolean / Flags
-bool isNepali = true;
+// bool isNepali = true;
 
 // DateTime - not primitive - custom
-DateTime dob = new(1999,07,31);
+// DateTime dob = new(1999,07,31);
 
 // datatypes can be nullable
 // add ?  after dataypes to make the variables nullable
@@ -45,6 +45,43 @@ DateTime dob = new(1999,07,31);
 // Console.WriteLine($"You entered {userInput.Length} characters");
 
 // get username and convert it  to uppercase
-Console.WriteLine("Enter your username:");
-string? userName = Console.ReadLine();
-Console.WriteLine(userName?.ToUpper());
+// Console.WriteLine("Enter your username:");
+// string? userName = Console.ReadLine();
+// Console.WriteLine(userName?.ToUpper());
+
+// Program  to calculate the bill amount for electricity consumption 
+// Ask user to supply electricity units consumed on his/her meter and calculate total  amount  based on following slabs
+
+Console.WriteLine("Enter the electricity consumption units due to be paid");
+string? electricityUnits = Console.ReadLine();
+if (float.TryParse(electricityUnits, out float units))
+{
+    float calculatedBillAmount = CalculateBill(units);
+    Console.WriteLine($"Total Bill Amount: {calculatedBillAmount}");
+}
+else
+{
+    Console.WriteLine("Please input a numeric value");
+}
+
+static float CalculateBill(float units)
+{
+    float bill = 0;
+    switch (units)
+    {
+        case <= 20:
+            bill = 100;
+            break;
+        case < 25:
+            bill = 100 + (units - 20) * 5.0f;
+            break;
+        case <= 50:
+            bill = 100 + 5 * 5.0f + (units - 25) * 10.0f;
+            break;
+        default:
+            bill = 2000;
+            break;
+    }
+
+    return bill;
+}
