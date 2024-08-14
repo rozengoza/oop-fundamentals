@@ -18,7 +18,7 @@ static float CalculateBill(float units)
         case <= 20:
             bill = 100;
             break;
-        case < 25:
+        case <= 25:
             bill = 100 + (units - 20) * 5.0f;
             break;
         case <= 50:

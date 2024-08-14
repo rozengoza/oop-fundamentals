@@ -1,6 +1,10 @@
-public class Vehicle
+public abstract class Vehicle
 {
-    public string vehicleNumber; // Field lai  camelcasing
+    public Vehicle(string vehicleNumber)
+    {
+        vehicleNumber = vehicleNumber;
+    }
+    string vehicleNumber; // Field lai  camelcasing
 
     //Full implemented property
     public string VehicleNumber // Property lai pascalcasing

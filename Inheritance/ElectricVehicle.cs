@@ -1,6 +1,14 @@
-public class ElectricVehicle : Vehicle //Syntax for inheritance
+public class ElectricVehicle : Vehicle, IVehicle //Syntax for inheritance
 {
-    public int BatteryCapacity { get; set; }
+    //ctor shortcut for constructor
+    public ElectricVehicle(string vehicleNumber, short range, float batteryCapacity)
+    : base(vehicleNumber)
+    {
+        Range = range;
+        BatteryCapacity = batteryCapacity;
+        
+    }
+    public float BatteryCapacity { get; set; }
     public short Range { get; set; }
 
     // Complete this 
@@ -20,4 +28,6 @@ public class ElectricVehicle : Vehicle //Syntax for inheritance
 
         // return distanceCovered / ((batteryUsedPercentage * BatteryCapacity)/ 100);
     }
+
+    public float GetDistanceCovered( float batteryUsedPercentage) => (Range /100) *  batteryUsedPercentage;
 }
